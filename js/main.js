@@ -2,7 +2,7 @@ function draw(data) {
 
     var scale = d3.scale.linear()
         .domain([60,72]) // Given a value in this range
-        .range([0, 150]); // Output the corresponding value from this range
+        .range([0, 200]); // Output the corresponding value from this range
 
     var official_chart = d3.select("#life_expect_chart_official")
                 .selectAll("div")
@@ -50,13 +50,13 @@ function summer(elmt) {
 }
 
 function init() {
-    d3.select('#slider1text').text(0.5);
-    d3.select('#slider2text').text(0.5);
-    d3.select('#slider3text').text(0.5);
-    d3.select('#slider4text').text(0.5);
-    d3.select('#slider5text').text(0.5);
-    d3.select('#slider6text').text(0.5);
-    d3.select('#slider7text').text(0.5);
+    d3.select('#slider1text').text(0.75);
+    d3.select('#slider2text').text(0.75);
+    d3.select('#slider3text').text(0.75);
+    d3.select('#slider4text').text(0.75);
+    d3.select('#slider5text').text(0.75);
+    d3.select('#slider6text').text(0.75);
+    d3.select('#slider7text').text(0.75);
     update();
     //var data = [83, 83];
     //draw(data);
