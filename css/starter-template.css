@@ -5,3 +5,48 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+/* For sliders */
+.axis {
+    font: 10px sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.axis .domain {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .3;
+    stroke-width: 10px;
+    stroke-linecap: round;
+}
+.axis .halo {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 8px;
+    stroke-linecap: round;
+}
+.slider .handle {
+    fill: #fff;
+    stroke: #000;
+    stroke-opacity: .5;
+    stroke-width: 1.25px;
+    pointer-events: none;
+}
+#work_queues_chart div {
+    font-size: 0.5em;
+    font-family: sans-serif;
+    color: white;
+    background-color: steelblue;
+    text-align: right;
+    padding: 0.5em;
+    margin: 0.2em;
+}
+.wrapper div {
+    margin: 35px 0;
+}
+.wrapper {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

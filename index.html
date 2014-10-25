@@ -16,6 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
 
+      <link href="css/d3.slider.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><!--<script src="../../assets/js/ie8-responsive-file-warning.js"></script>--><![endif]-->
     <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
@@ -26,14 +27,24 @@
       <!--<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>-->
       <!--<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
       <script src="LifeExpectancyFunction.js"></script>
-    <![endif]-->
+
+      <!-- Support for Sliders and charts -->
+      <script src="/js/d3.v3.min.js"></script>
+      <script src="/js/d3.slider.js"></script>
+      <script src="/js/main.js"></script>
+
+    <!--<![endif]-->
+      <!--
       <script type="application/javascript">
           var result = LifeExpectancyMen(0.77,0.77,0.73,0.81,0.75,0.73, 0.67);
           alert(result);
       </script>
+      -->
+
+
   </head>
 
-  <body>
+  <body onload="init()">
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -61,8 +72,18 @@
       <div class="starter-template">
         <h1>Life Expentency Comparison</h1>
         <p class="lead">
-            Here we are !!!
-        </p>
+          <div class="wrapper">
+              <h2>Slider values: <span id="slider1text">0</span> <span id="slider2text">0</span> <span id="slider3text">0</span></h2>
+
+              <div id="slider1"></div>
+              <div id="slider2"></div>
+              <div id="slider3"></div>
+          </div>
+          <br />
+
+          <div id="work_queues_chart" ></div>
+
+
       </div>
 
     </div><!-- /.container -->
@@ -75,5 +96,21 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+
+    <script>
+        d3.select('#slider1').call(d3.slider().on("slide", function (evt, value) {
+            d3.select('#slider1text').text(value);
+            update();
+        }));
+        d3.select('#slider2').call(d3.slider().on("slide", function (evt, value) {
+            d3.select('#slider2text').text(value);
+            update();
+        }));
+        d3.select('#slider3').call(d3.slider().on("slide", function (evt, value) {
+            d3.select('#slider3text').text(value);
+            update();
+        }));
+      </script>
+
   </body>
 </html>
