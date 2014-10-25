@@ -8,6 +8,39 @@ function draw(data) {
         .domain([0, 50])
         .range([0, 100]);
 
+    var life_expect_official= d3.select("#life_expect_chart_official")
+                .selectAll("div")
+                .data([90])
+                .attr("id", "life_expect_chart_official")
+                .attr("class", "bar");
+    life_expect_official.enter().append("div")
+
+	life_expect_official.style("height", function(d) {
+					return scale(d) + "px";
+				});
+
+
+	life_expect_official.exit().remove();
+
+
+    var life_expect = d3.select("#life_expect_chart_synth")
+                .selectAll("div")
+				.data([data[0]])
+				.attr("id", "life_expect_chart_synth")
+				.attr("class", "bar");
+
+    life_expect.enter().append("div");
+
+
+	life_expect.style("height", function(d) {
+					return scale(d) + "px";
+				});
+
+
+	life_expect.exit().remove();
+
+
+
 
     var bars = d3.select("#life_expectency_chart")
                 .selectAll("div")
@@ -54,9 +87,9 @@ function update() {
     elmt[5] = d3.select('#slider6text').text();
     elmt[6] = d3.select('#slider7text').text();
 
-    elmt.forEach(function(slide){
-        console.log(slide);
-    });
+    //elmt.forEach(function(slide){
+    //    console.log(slide);
+    //});
 
 //              console.log("output is : " +               LifeExpectancyMen(0.83,0.89,0.89,0.89,0.89,0.89,0.78,0.78));
     var result =  LifeExpectancyMen(elmt[0],elmt[1],elmt[2],elmt[3],elmt[4],elmt[5],elmt[6]);
