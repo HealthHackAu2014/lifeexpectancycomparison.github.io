@@ -1,62 +1,41 @@
 function draw(data) {
 
-    var w = 500;
-    var h = 100;
-    var barPadding = 1;
-
     var scale = d3.scale.linear()
-        .domain([0, 50])
-        .range([0, 100]);
+        .domain([60,72]) // Given a value in this range
+        .range([0, 150]); // Output the corresponding value from this range
 
-    var life_expect_official= d3.select("#life_expect_chart_official")
+    var official_chart = d3.select("#life_expect_chart_official")
                 .selectAll("div")
-                .data([90])
+                .data([71])
                 .attr("id", "life_expect_chart_official")
                 .attr("class", "bar");
-    life_expect_official.enter().append("div")
+    official_chart.enter().append("div")
 
-	life_expect_official.style("height", function(d) {
+	official_chart.style("height", function(d) {
 					return scale(d) + "px";
 				});
 
 
-	life_expect_official.exit().remove();
+	official_chart.exit().remove();
 
 
-    var life_expect = d3.select("#life_expect_chart_synth")
+    var dynamic_chart = d3.select("#life_expect_chart_synth")
                 .selectAll("div")
 				.data([data[0]])
 				.attr("id", "life_expect_chart_synth")
 				.attr("class", "bar");
 
-    life_expect.enter().append("div");
+    dynamic_chart.enter().append("div");
 
 
-	life_expect.style("height", function(d) {
+	dynamic_chart.style("height", function(d) {
+	                console.log(scale(d));
 					return scale(d) + "px";
+
 				});
 
 
-	life_expect.exit().remove();
-
-
-
-
-    var bars = d3.select("#life_expectency_chart")
-                .selectAll("div")
-				.data(data)
-				.attr("id", "life_expectency_chart")
-				.attr("class", "bar");
-
-    bars.enter().append("div");
-
-
-	bars.style("height", function(d) {
-					return scale(d) + "px";
-				});
-
-
-	bars.exit().remove();
+	dynamic_chart.exit().remove();
 
 
 };
@@ -71,8 +50,16 @@ function summer(elmt) {
 }
 
 function init() {
-    var data = [83, 83];
-    draw(data);
+    d3.select('#slider1text').text(0.5);
+    d3.select('#slider2text').text(0.5);
+    d3.select('#slider3text').text(0.5);
+    d3.select('#slider4text').text(0.5);
+    d3.select('#slider5text').text(0.5);
+    d3.select('#slider6text').text(0.5);
+    d3.select('#slider7text').text(0.5);
+    update();
+    //var data = [83, 83];
+    //draw(data);
 }
 
 
@@ -97,7 +84,7 @@ function update() {
 
     var a = [];
     a[0] = result;
-    a[1] = 90;
+    a[1] = 71;
     draw(a);
 };
 

@@ -65,7 +65,7 @@ body {
 div.bar {
     display: inline-block;
     width: 50px;
-    height: 75px;	/* Gets overriden by D3-assigned height below */
+    height: 75px;
     margin-right: 2px;
     background-color: teal;
 
@@ -100,7 +100,6 @@ div.bar {
 }
 
 .rowtall {
-    min-height: 300px;
-
+    min-height: 200px;
 }
 
