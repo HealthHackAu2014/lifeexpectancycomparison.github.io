@@ -38,17 +38,32 @@ function init() {
     draw(data);
 }
 
+
 function update() {
     var elmt = new Array();
+
     elmt[0] = d3.select('#slider1text').text();
     elmt[1] = d3.select('#slider2text').text();
     elmt[2] = d3.select('#slider3text').text();
-    var sum = summer(elmt);
-    var avg = sum/elmt.length
+    elmt[3] = d3.select('#slider4text').text();
+    elmt[4] = d3.select('#slider5text').text();
+    elmt[5] = d3.select('#slider6text').text();
+    elmt[6] = d3.select('#slider7text').text();
 
-    var data = [avg, 83];
-    draw(data);
+    elmt.forEach(function(slide){
+        console.log(slide);
+    });
+
+//              console.log("output is : " +               LifeExpectancyMen(0.83,0.89,0.89,0.89,0.89,0.89,0.78,0.78));
+    var result =  LifeExpectancyMen(elmt[0],elmt[1],elmt[2],elmt[3],elmt[4],elmt[5],elmt[6]);
+    console.log("output is : " + result);
+
+    var a = [];
+    a[0] = result;
+    a[1] = 90;
+    draw(a);
 };
+
 
 
 
