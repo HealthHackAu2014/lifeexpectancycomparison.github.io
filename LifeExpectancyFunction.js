@@ -69,4 +69,4 @@ return TotalLives/lives[0];
 /*Standard ABS result*/
 
 var result = LifeExpectancyMen(0.83,0.89,0.89,0.89,0.89,0.89,0.78,0.78);
-alert(result);
+//alert(result);

@@ -66,3 +66,8 @@ div.bar {
     stroke-opacity: .5;
     stroke-width: 1.25px;
     pointer-events: none;
+}
+
+.col-md-4 {
+    border: 1px solid black;
+}
