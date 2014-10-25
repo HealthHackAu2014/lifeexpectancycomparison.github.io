@@ -29,9 +29,14 @@
       <script src="LifeExpectancyFunction.js"></script>
 
       <!-- Support for Sliders and charts -->
-      <script src="/js/d3.v3.min.js"></script>
-      <script src="/js/d3.slider.js"></script>
-      <script src="/js/main.js"></script>
+      <script src="js/d3.v3.min.js"></script>
+      <script src="js/d3.slider.js"></script>
+      <script src="js/main.js"></script>
+
+      <script type="application/javascript">
+
+
+      </script>
 
     <!--<![endif]-->
       <!--
@@ -73,11 +78,23 @@
         <h1>Life Expentency Comparison</h1>
         <p class="lead">
           <div class="wrapper">
-              <h2>Slider values: <span id="slider1text">0</span> <span id="slider2text">0</span> <span id="slider3text">0</span></h2>
+              <h2>Slider values:
+                  <span id="slider1text">0</span>
+                  <span id="slider2text">0</span>
+                  <span id="slider3text">0</span>
+                  <span id="slider4text">0</span>
+                  <span id="slider5text">0</span>
+                  <span id="slider6text">0</span>
+                  <span id="slider7text">0</span>
+              </h2>
 
               <div id="slider1"></div>
               <div id="slider2"></div>
               <div id="slider3"></div>
+              <div id="slider4"></div>
+              <div id="slider5"></div>
+              <div id="slider6"></div>
+              <div id="slider7"></div>
           </div>
           <br />
 
@@ -98,18 +115,42 @@
     <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 
     <script>
-        d3.select('#slider1').call(d3.slider().on("slide", function (evt, value) {
-            d3.select('#slider1text').text(value);
+        d3.select('#slider1').call(d3.slider().value(50).min(0).max(100).on("slide", function (evt, value) {
+            d3.select('#slider1text').text(value/100);
             update();
         }));
-        d3.select('#slider2').call(d3.slider().on("slide", function (evt, value) {
-            d3.select('#slider2text').text(value);
+        d3.select('#slider2').call(d3.slider().value(50).min(0).max(100).on("slide", function (evt, value) {
+            d3.select('#slider2text').text(value/100);
             update();
         }));
-        d3.select('#slider3').call(d3.slider().on("slide", function (evt, value) {
-            d3.select('#slider3text').text(value);
+        d3.select('#slider3').call(d3.slider().value(50).min(0).max(100).on("slide", function (evt, value) {
+            d3.select('#slider3text').text(value/100);
             update();
         }));
+        d3.select('#slider4').call(d3.slider().value(50).min(0).max(100).on("slide", function (evt, value) {
+            d3.select('#slider4text').text(value/100);
+            update();
+        }));
+        d3.select('#slider5').call(d3.slider().value(50).min(0).max(100).on("slide", function (evt, value) {
+            d3.select('#slider5text').text(value/100);
+            update();
+        }));
+        d3.select('#slider6').call(d3.slider().value(50).min(0).max(100).on("slide", function (evt, value) {
+            d3.select('#slider6text').text(value/100);
+            update();
+        }));
+        d3.select('#slider7').call(d3.slider().value(50).min(0).max(100).on("slide", function (evt, value) {
+            d3.select('#slider7text').text(value/100);
+            update();
+        }));
+        d3.select('#slider1text').text(50);
+        d3.select('#slider2text').text(50);
+        d3.select('#slider3text').text(50);
+        d3.select('#slider4text').text(50);
+        d3.select('#slider5text').text(50);
+        d3.select('#slider6text').text(50);
+        d3.select('#slider7text').text(50);
+        update();
       </script>
 
   </body>
