@@ -1,5 +1,9 @@
 function draw(data) {
 
+    var w = 500;
+    var h = 100;
+    var barPadding = 1;
+
     var scale = d3.scale.linear()
         .domain([0, 50])
         .range([0, 100]);
