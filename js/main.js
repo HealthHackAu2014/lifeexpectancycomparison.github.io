@@ -1,27 +1,27 @@
 function draw(data) {
+
     var scale = d3.scale.linear()
         .domain([0, 50])
         .range([0, 100]);
 
-    var bars = d3.select("#work_queues_chart")
-        .selectAll("div")
-        .attr("id", "work_queues_chart")
-        .data(data);
 
-    // enter selection
+    var bars = d3.select("#life_expectency_chart")
+                .selectAll("div")
+				.data(data)
+				.attr("id", "life_expectency_chart")
+				.attr("class", "bar");
+
     bars.enter().append("div");
 
-    // update selection
-    bars.style("width", function (d) {
-        return scale(d) + "%";
-    })
-        .text(function (d) {
-        return d;
-    });
+
+	bars.style("height", function(d) {
+					return scale(d) + "px";
+				});
 
 
-    // exit selection
-    bars.exit().remove();
+	bars.exit().remove();
+
+
 };
 
 function summer(elmt) {
@@ -34,7 +34,7 @@ function summer(elmt) {
 }
 
 function init() {
-    var data = [23, 23];
+    var data = [83, 83];
     draw(data);
 }
 
@@ -46,7 +46,7 @@ function update() {
     var sum = summer(elmt);
     var avg = sum/elmt.length
 
-    var data = [avg, 23];
+    var data = [avg, 83];
     draw(data);
 };
 
