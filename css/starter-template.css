@@ -101,9 +101,9 @@ div.bar {
 
 .rowtall {
     min-height: 230px;
-    position: relative;
-    bottom: 0;
+    vertical-align: bottom;
 }
+
 
 .one-word-per-line {
     word-spacing: 900px;
