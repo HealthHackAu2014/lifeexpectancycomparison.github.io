@@ -1,5 +1,7 @@
 body {
   padding-top: 50px;
+  font-family: 'Roboto Condensed', sans-serif;
+
 }
 .starter-template {
   padding: 40px 15px;
@@ -105,6 +107,17 @@ div.bar {
 }
 
 
-.one-word-per-line {
+.life_expect_text {
+    font-size: 250%;
     word-spacing: 900px;
+    font-weight: 300;
+    color: #777777;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.identification {
+    font-size: 130%;
+    color: #777777;
+    margin-bottom: 20px;
 }
