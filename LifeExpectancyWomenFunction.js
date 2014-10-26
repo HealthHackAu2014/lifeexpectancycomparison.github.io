@@ -1,4 +1,4 @@
-function LifeExpectancyMen(p1,p2,p3,p4,p5,p6,p7)
+function LifeExpectancyWomen(p1,p2,p3,p4,p5,p6,p7)
 {
     var c1=1.136010363; //first fudge factor
     var c2=3.99905; //second fudge factor
