@@ -3,7 +3,7 @@ function LifeExpectancyMen(p1,p2,p3,p4,p5,p6,p7)
 {
     var c1=1.136010363; //first fudge factor
     var c2=3.99905; //second fudge factor
-    var c3=5.85269589; //third fudge factor
+    var c3=4.245261803; //third fudge factor
 
         //ABS Life tables
 
