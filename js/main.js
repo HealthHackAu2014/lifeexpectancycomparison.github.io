@@ -73,26 +73,29 @@ function init() {
 function update() {
     var elmt = new Array();
 
-    elmt[0] = d3.select('#slider1text').text();
-    elmt[1] = d3.select('#slider2text').text();
-    elmt[2] = d3.select('#slider3text').text();
+    elmt[6] = d3.select('#slider1text').text();
+    elmt[5] = d3.select('#slider2text').text();
+    elmt[4] = d3.select('#slider3text').text();
     elmt[3] = d3.select('#slider4text').text();
-    elmt[4] = d3.select('#slider5text').text();
-    elmt[5] = d3.select('#slider6text').text();
-    elmt[6] = d3.select('#slider7text').text();
+    elmt[2] = d3.select('#slider5text').text();
+    elmt[1] = d3.select('#slider6text').text();
+    elmt[0] = d3.select('#slider7text').text();
 
-    //elmt.forEach(function(slide){
-    //    console.log(slide);
-    //});
+    var result = '';
+    var defaultRes = '';
 
-//              console.log("output is : " +               LifeExpectancyMen(0.83,0.89,0.89,0.89,0.89,0.89,0.78,0.78));
-    var result =  LifeExpectancyMen(elmt[0],elmt[1],elmt[2],elmt[3],elmt[4],elmt[5],elmt[6]);
+    if(dataFor === 'male')
+    {
+        defaultRes = 71;
+        result =  LifeExpectancyMen(elmt[0],elmt[1],elmt[2],elmt[3],elmt[4],elmt[5],elmt[6]);
+    }
+    else
+    {
+        defaultRes = 73.7;
+        result =  LifeExpectancyWomen(elmt[0],elmt[1],elmt[2],elmt[3],elmt[4],elmt[5],elmt[6]);
+    }
     console.log("output is : " + result);
-
-    var a = [];
-    a[0] = result;
-    a[1] = 71;
-    draw(a);
+    draw([result, defaultRes]);
 };
 
 
