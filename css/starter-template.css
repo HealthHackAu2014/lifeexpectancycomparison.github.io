@@ -101,5 +101,10 @@ div.bar {
 
 .rowtall {
     min-height: 230px;
+    position: relative;
+    bottom: 0;
 }
 
+.one-word-per-line {
+    word-spacing: 900px;
+}

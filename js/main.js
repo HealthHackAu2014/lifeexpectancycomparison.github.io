@@ -4,6 +4,10 @@ function draw(data) {
         .domain([60,72]) // Given a value in this range
         .range([0, 200]); // Output the corresponding value from this range
 
+
+    var data_rounded = Number((data[0]).toFixed(1));
+    d3.select('#life_synth').text(data_rounded);
+
     var official_chart = d3.select("#life_expect_chart_official")
                 .selectAll("div")
                 .data([71])
@@ -22,6 +26,9 @@ function draw(data) {
     var dynamic_chart = d3.select("#life_expect_chart_synth")
                 .selectAll("div")
 				.data([data[0]])
+				.attr("y", function(d) {
+                			   		return 200 - (d * 4);
+                			   })
 				.attr("id", "life_expect_chart_synth")
 				.attr("class", "bar");
 
