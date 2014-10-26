@@ -16,8 +16,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'tests/lifeSpec.js',
-      'LifeExpectancyFunction.js',
-      'LifeExpectancyWomenFunction.js',
+      'js/LifeExpectancyFunction.js',
+      'js/LifeExpectancyWomenFunction.js',
     ],
 
 
