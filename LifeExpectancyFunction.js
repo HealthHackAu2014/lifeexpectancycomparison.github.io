@@ -3,12 +3,12 @@ function LifeExpectancyMen(p1,p2,p3,p4,p5,p6,p7)
 {
 var c1=1.136010363; //first fudge factor
 var c2=3.99905; //second fudge factor
-var c3=5.85269589; //third fudge factor
+var c3=4.245261803; //third fudge factor
 
     //ABS Life tables
 
-var mortality =[0.00877,0.0016,0.001,0.0011,0.00586,0.00837,	0.01005,0.01554,0.02163,0.02934,0.03983,0.05181,0.07117,0.11186,0.16087,0.23141,0.30705,0.41828,1];
-var abs_adjustment=[1,0.83,0.83,0.83,0.89,0.89,0.89,0.89,                   0.89,0.89,0.89,0.89,0.89,0.78,0.78,0.78,0.78,0.78,1];
+var mortality =[0.00877,0.0016,0.001,0.0011,0.00586,0.00837,0.01005,0.01554,0.02163,0.02934,0.03983,0.05181,0.07117,0.11186,0.16087,0.23141,0.30705,0.41828,1];
+var abs_adjustment=[1,0.83,0.83,0.83,0.89,0.89,0.89,0.89,0.89,0.89,0.89,0.89,0.89,0.78,0.78,0.78,0.78,0.78,1];
 
   
 //mortality rates
@@ -68,5 +68,5 @@ return TotalLives/lives[0];
 }
 /*Standard ABS result*/
 
-var result = LifeExpectancyMen(0.83,0.89,0.89,0.89,0.89,0.89,0.78,0.78);
+var result = LifeExpectancyMen(0.83,0.89,0.89,0.89,0.89,0.78,0.78);
 //alert(result);
