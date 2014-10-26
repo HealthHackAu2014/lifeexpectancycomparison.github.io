@@ -99,9 +99,6 @@ div.bar {
     padding: 5px 5px 5px 5px;
 }
 
-.rowtall {
-    min-height: 230px;
-}
 
 .navbar-nav>li>a {
     padding-top: 0px;
@@ -121,4 +118,18 @@ div.bar {
     font-size: 130%;
     color: #777777;
     margin-bottom: 20px;
+}
+
+#years_box_synth {
+    padding-top: 240px;
+    font-size: 150%;
+    font-weight: bolder;
+    color: #777777;
+}
+
+#years_box_official {
+    padding-top: 240px;
+    font-size: 150%;
+    font-weight: bolder;
+    color: #777777;
 }
