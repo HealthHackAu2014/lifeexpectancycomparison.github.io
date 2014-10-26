@@ -1,3 +1,5 @@
+var defaultRes = '71';
+
 function draw(data) {
 
     var scale = d3.scale.linear()
@@ -10,7 +12,7 @@ function draw(data) {
 
     var official_chart = d3.select("#life_expect_chart_official")
                 .selectAll("div")
-                .data([71])
+                .data([defaultRes])
                 .attr("id", "life_expect_chart_official")
                 .attr("class", "bar");
     official_chart.enter().append("div")
@@ -82,11 +84,10 @@ function update() {
     elmt[0] = d3.select('#slider7text').text();
 
     var result = '';
-    var defaultRes = '';
 
     if(dataFor === 'male')
     {
-        defaultRes = 71;
+        defaultRes = 69.1;
         result =  LifeExpectancyMen(elmt[0],elmt[1],elmt[2],elmt[3],elmt[4],elmt[5],elmt[6]);
     }
     else
@@ -95,7 +96,7 @@ function update() {
         result =  LifeExpectancyWomen(elmt[0],elmt[1],elmt[2],elmt[3],elmt[4],elmt[5],elmt[6]);
     }
     console.log("output is : " + result);
-    draw([result, defaultRes]);
+    draw([result, 71]);
 };
 
 
